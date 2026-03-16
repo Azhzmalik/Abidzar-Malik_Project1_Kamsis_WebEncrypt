@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AES Cipher Mode Encryption</title>
+
+    <link rel="stylesheet" href="style_Web.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔐 AES Encryption Tool</h1>
+
+        <p class="desc">
+            Simulasi Mode Cipher: ECB, CBC, CFB, OFB
+        </p>
+
+        <label>Plaintext / Ciphertext</label>
+        <textarea id="text"></textarea>
+
+        <label>Mode Cipher</label>
+        <select id="mode">
+
+            <option value="ECB">ECB</option>
+            <option value="CBC">CBC</option>
+            <option value="CFB">CFB</option>
+            <option value="OFB">OFB</option>
+
+        </select>
+
+        <label>Format Output</label>
+        <select id="format">
+            <option value="decimal">Decimal (Angka)</option>
+            <option value="base64">Base64</option>
+        </select>
+
+        <label>Secret Key</label>
+        <input id="key" placeholder="Masukkan kunci">
+
+        <div class="buttons">
+
+            <button onclick="encrypt()">Encrypt</button>
+            <button onclick="decrypt()">Decrypt</button>
+
+        </div>
+
+        <label>Output</label>
+        <textarea id="result"></textarea>
+
+    </div>
+
+    <script src="script_Web.js"></script>
+
+</body>
+</html>
