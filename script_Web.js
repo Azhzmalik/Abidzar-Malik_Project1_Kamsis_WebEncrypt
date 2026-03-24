@@ -211,7 +211,17 @@ function encryptOFB(blocks, key) {
 }
 
 function decryptOFB(blocks, key) {
-    return encryptOFB(blocks.slice(1), key);
+
+    let iv = blocks[0]; 
+    let result = [];
+
+    for (let i = 1; i < blocks.length; i++) {
+        iv = aesEncrypt(iv, key);
+        let p = xor(blocks[i], iv);
+        result.push(p);
+    }
+
+    return result;
 }
 
 /* =========================================
@@ -331,7 +341,7 @@ function decrypt() {
 }
 
 /* =========================================
-   IMAGE INPUT 
+   IMAGE&TEXT INPUT 
 ========================================= */
 
 document.getElementById("imageInput").addEventListener("change", function(e){
@@ -354,6 +364,21 @@ document.getElementById("imageInput").addEventListener("change", function(e){
     };
 
     reader.readAsDataURL(file);
+
+});
+
+document.getElementById("fileInput").addEventListener("change", function(e){
+
+    let file = e.target.files[0];
+    if(!file) return;
+
+    let reader = new FileReader();
+
+    reader.onload = function(event){
+        document.getElementById("text").value = event.target.result;
+    };
+
+    reader.readAsText(file);
 
 });
 
