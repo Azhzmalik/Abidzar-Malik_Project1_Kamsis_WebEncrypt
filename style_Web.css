@@ -1,116 +1,88 @@
 body {
-
     margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #667eea, #764ba2, #6dd5ed);
 
     height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.container {
+.main-layout {
+    display: flex;
+    gap: 25px;
+    width: 1100px;
+}
 
-    width: 700px;
+.left-panel, .right-panel {
+    flex: 1;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
 
-    background: white;
+.right-panel {
+    display: none;
+}
 
-    padding: 30px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-
+.main-layout.split .right-panel {
+    display: block;
 }
 
 h1 {
-
     text-align: center;
-
     color: #4a4aff;
-
-}
-
-.desc {
-
-    text-align: center;
-
-    color: #666;
-
 }
 
 label {
-
-    font-weight: bold;
-
     display: block;
-
-    margin-top: 12px;
-
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 600;
 }
 
-textarea,
-input,
-select {
-
-    width: 100%;
-
+textarea, input, select {
+    width: 97%;
     padding: 10px;
-
     margin-top: 5px;
-
-    border-radius: 8px;
-
-    border: 1px solid #ccc;
-
-    font-size: 14px;
-
+    border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
 textarea {
+    height: 98px;
+}
 
-    height: 90px;
-
+#result {
+    height: 80px;
 }
 
 .buttons {
-
-    margin-top: 15px;
-
     display: flex;
-
     gap: 10px;
-
+    margin-top: 15px;
 }
 
 button {
-
     flex: 1;
-
     padding: 12px;
-
+    border-radius: 12px;
     border: none;
-
-    border-radius: 8px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
     color: white;
-
-    background: linear-gradient(45deg, #36d1dc, #5b86e5);
-
-    transition: 0.3s;
-
+    background: linear-gradient(45deg,#36d1dc,#5b86e5);
+    cursor: pointer;
 }
 
-button:hover {
+.image-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
 
-    transform: scale(1.05);
-
+.image-box img {
+    width: 180px;
+    border-radius: 10px;
 }
